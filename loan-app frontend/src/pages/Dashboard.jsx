@@ -1,12 +1,15 @@
 
 
+import LoanDetails from "../components/LoanDetails";
+
 const Dashboard = () => {
-  return (
-    <div className="dashboard">
-      <h1>Welcome to the Dashboard!</h1>
-      <p>This is your application dashboard.</p>
-    </div>
-  );
-};
+    return(
+        <div>
+            <h1>Yo ! welcome </h1>
+            <LoanDetails/>
+
+        </div>
+    )
+}
 
 export default Dashboard;
