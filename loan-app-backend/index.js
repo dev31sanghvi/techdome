@@ -2,13 +2,15 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
-
-
+const loanRoutes = require('./routes/loanRoutes');
+// const authRoutes = require('./routes/auth');
 const app = express();
 
 // Middleware it is
 app.use(express.json());
 app.use(cors());
+
+app.use('/api',loanRoutes);
 
 
 mongoose
