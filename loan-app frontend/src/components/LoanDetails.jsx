@@ -27,7 +27,8 @@ const LoanDetails=()=>{
           try {
             await API.post("/repayments", { amount: repaymentAmount });
             alert("Repayment Successful!");
-          } catch (err) {
+          } catch (error) {
+            console.error(error);
             alert("Repayment failed");
           }
         } else {
