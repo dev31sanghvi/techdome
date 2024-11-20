@@ -1,0 +1,52 @@
+name: Frontend CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          path: loan-app-frontend
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install Dependencies
+        run: |
+          cd loan-app-frontend
+          npm install
+
+      - name: Lint Code
+        run: |
+          cd loan-app-frontend
+          npm run lint
+
+    #   - name: Run Tests
+    #     run: |
+    #       cd loan-app-frontend
+    #       npm run test
+
+      - name: Build Project
+        run: |
+          cd loan-app-frontend
+          npm run build
+
+      - name: Deploy to Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          cd loan-app-frontend
+          npm install -g vercel
+          vercel --prod --token $VERCEL_TOKEN               
