@@ -8,10 +8,7 @@ The **Loan Application System** is a full-stack application designed to enable c
 - **Backend:** Node.js, Express.js  
 - **Database:** MongoDB  
 - **Authentication:** JWT (JSON Web Tokens)  
-- **State Management:** React Context API  
-- **Deployment:**  
-  - Frontend: Vercel  
-  - Backend: Heroku/Render  
+- **State Management:** React Context API   
 
 ---
 
