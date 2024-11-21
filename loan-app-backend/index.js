@@ -11,6 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use('/api',loanRoutes);
+app.use("/loans",loanRoutes)
 
 
 mongoose

@@ -4,6 +4,9 @@ const router = express.Router();
 const Loan = require('../models/Loan');
 const authenticate = require('../middleware/authenticate');
 
+
+
+
 // GET /loans: Fetch loan details for the authenticated user
 router.get('/loans', authenticate, async (req, res) => {
   try {
@@ -23,7 +26,7 @@ router.get('/loans', authenticate, async (req, res) => {
 
 // POST /repayments: Submit a repayment for the loan
 router.post('/repayments', authenticate, async (req, res) => {
-    // getting repayment amt from req. body 
+    // getting repayment amt from req. body
   const { amount } = req.body;
 
   try {
