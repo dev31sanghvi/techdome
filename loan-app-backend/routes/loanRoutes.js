@@ -1,9 +1,9 @@
-// routes/loanRoutes.js
+
 
 const express = require('express');
 const router = express.Router();
 const authenticate = require('../middleware/authenticate');
-const Loan = require('../models/Loan'); 
+const Loan = require('../models/Loan');
 
 // Route to create a loan
 router.post('/create', authenticate, async (req, res) => {

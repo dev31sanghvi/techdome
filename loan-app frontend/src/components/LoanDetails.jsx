@@ -13,8 +13,10 @@ const LoanDetails=()=>{
         const fetchLoanDetails = async () => {
           try {
             const response = await API.get("/loans");
+            console.log("loan api response :",response.data);
             setLoan(response.data);
           } catch (error) {
+            console.log(error)
             setError("error while fetching loan details");
           }
         };
@@ -42,7 +44,7 @@ const LoanDetails=()=>{
           {loan ? (
             <div>
               <h2>Loan Details</h2>
-              <p>Amount: ${loan.amount}</p>
+              <p>Amount: {loan.amount}</p>
               <p>Term: {loan.term} weeks</p>
               <p>Status: {loan.status}</p>
               <h3>Scheduled Repayments</h3>
