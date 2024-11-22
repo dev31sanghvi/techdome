@@ -73,9 +73,7 @@ The backend follows RESTful API principles with standard HTTP methods. Key endpo
 
 ---
 
-### **Deployment and CI/CD**  
-- **Frontend:** Deployed on Vercel.  
-- **Backend:** Deployed on Heroku or Render.  
+### **CI/CD**   
 - **CI/CD Pipeline:**  
   - Automated tests and deployment with GitHub Actions.  
   - Ensures consistent and error-free releases.  
